@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   resources :replies, only: [:show]
 
   root 'confessions#top'
+  get '/wakeup', to: 'tops#wakeup'
 end

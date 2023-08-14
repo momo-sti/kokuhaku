@@ -1,4 +1,9 @@
 class ConfessionsController < ApplicationController
+  # cron-job
+  def wakeup
+    render json: { message: 'Server is awake' }
+  end
+  
   def top
   end
 
