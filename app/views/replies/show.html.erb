@@ -1,5 +1,5 @@
 <% base_url = request.base_url %>
-<% share_url = "#{base_url}/replies/#{@reply.id}" %>
+<% share_url = "#{base_url}" %>
 
 <div class="container">
   <div class="center">
@@ -19,12 +19,12 @@
     </p>
 
     <% if @reply.result == 'success' %>
-      <%= link_to "Xで自慢する", "https://twitter.com/intent/tweet?text=" + CGI.escape("おめでとう！#{@reply.confession.username}は彼女ができました！「#{@reply.feedback}」 #告白シミュレーター #{share_url}"), target: "_blank", class: 'btn btn-primary' %>
+      <%= link_to "Xで自慢する", "https://twitter.com/intent/tweet?text=" + CGI.escape("おめでとう！#{@reply.confession.username}は彼女ができました！「#{@reply.feedback}」 #ミニアプリweek #青春アプリ #{share_url}"), target: "_blank", class: 'btn btn-primary' %>
     <% else %>
-      <%= link_to "Xでなぐさめてもらう", "https://twitter.com/intent/tweet?text=" + CGI.escape("残念...#{@reply.confession.username}は振られてしまいました...「#{@reply.feedback}」 #告白シミュレーター #{share_url}"), target: "_blank", class: 'btn btn-primary' %>
+      <%= link_to "Xでなぐさめてもらう", "https://twitter.com/intent/tweet?text=" + CGI.escape("残念...#{@reply.confession.username}は振られてしまいました...「#{@reply.feedback}」 #ミニアプリweek #青春アプリ #{share_url}"), target: "_blank", class: 'btn btn-primary' %>
     <% end %>
 
     <%= link_to '戻る', new_confession_path, class: 'btn btn-secondary' %>
-    <%= link_to 'TOPページ', root_path, class: 'btn btn-secondary' %>
+    <%= link_to 'TOPページ', root_path, class: 'btn btn-sbtn-neutral' %>
   </div>
 </div>
