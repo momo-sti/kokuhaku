@@ -1,0 +1,2 @@
+module ConfessionHelper
+end

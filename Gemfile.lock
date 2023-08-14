@@ -200,6 +200,7 @@ DEPENDENCIES
   bootsnap
   cssbundling-rails
   debug
+  i18n
   jbuilder
   jsbundling-rails
   pg (~> 1.1)

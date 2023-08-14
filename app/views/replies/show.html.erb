@@ -1,0 +1,30 @@
+<% base_url = request.base_url %>
+<% share_url = "#{base_url}/replies/#{@reply.id}" %>
+
+<div class="container">
+  <div class="center">
+    <%= image_tag @reply.image_path, class:"PNG", width: "300", height: "300", alt: @reply.result == 'success' ? '告白を受け入れた' : '告白を断った' %>
+
+    <div class="jedge">
+      <% if @reply.result == 'success' %>
+        <p class="result-message">告白の結果：成功！</p>
+      <% else %>
+        <p class="result-message">告白の結果：失敗...</p>
+      <% end %>
+    </div>
+
+
+    <p>
+      「<%= @reply.feedback %>」
+    </p>
+
+    <% if @reply.result == 'success' %>
+      <%= link_to "Xで自慢する", "https://twitter.com/intent/tweet?text=" + CGI.escape("おめでとう！#{@reply.confession.username}は彼女ができました！「#{@reply.feedback}」 #告白シミュレーター #{share_url}"), target: "_blank", class: 'btn btn-primary' %>
+    <% else %>
+      <%= link_to "Xでなぐさめてもらう", "https://twitter.com/intent/tweet?text=" + CGI.escape("残念...#{@reply.confession.username}は振られてしまいました...「#{@reply.feedback}」 #告白シミュレーター #{share_url}"), target: "_blank", class: 'btn btn-primary' %>
+    <% end %>
+
+    <%= link_to '戻る', new_confession_path, class: 'btn btn-secondary' %>
+    <%= link_to 'TOPページ', root_path, class: 'btn btn-secondary' %>
+  </div>
+</div>

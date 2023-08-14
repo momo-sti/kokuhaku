@@ -34,6 +34,7 @@ gem "jbuilder"
 gem "redis", "~> 4.0"
 
 gem "ruby-openai"
+gem 'i18n'
 
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]

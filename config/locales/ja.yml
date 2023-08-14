@@ -1,0 +1,12 @@
+ja:
+  activerecord:
+    models:
+      confession: 告白
+    attributes:
+      confession:
+        username: ユーザー名
+        text: 告白内容
+  errors:
+    messages:
+      blank: "を入力してください"
+      too_long: "は%{count}文字以内で入力してください"
