@@ -35,6 +35,7 @@ gem "redis", "~> 4.0"
 
 gem "ruby-openai"
 gem 'i18n'
+gem 'dotenv-rails'
 
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
@@ -71,3 +72,9 @@ group :development do
   # gem "spring"
 end
 
+
+gem "dockerfile-rails", ">= 1.5", :group => :development
+
+gem "sentry-ruby", "~> 5.10"
+
+gem "sentry-rails", "~> 5.10"
